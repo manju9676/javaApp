@@ -20,10 +20,11 @@ pipeline {
         stage('Publish to Nexus') {
             steps {
                 script {
-                    sh """
-                        curl -v -u admin:Manju208 --upload-file target/${ARTIFACT_NAME} \
-                        ${NEXUS_URL}/repository/${NEXUS_REPO}/${ARTIFACT_NAME}
-                    """
+                    // sh """
+                    //     curl -v -u admin:Manju208 --upload-file target/${ARTIFACT_NAME} \
+                    //     ${NEXUS_URL}/repository/${NEXUS_REPO}/${ARTIFACT_NAME}
+                    // """
+                    sh 'mvn clean deploy'
                 }
             }
         }
