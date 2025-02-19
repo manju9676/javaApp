@@ -6,5 +6,10 @@ pipeline{
                git credentialsId: 'github', url: 'https://github.com/manju9676/javaApp.git'
             }       
         }
+        stage('SCM'){
+            steps{
+                sh 'ls'
+            }
+        }
     }
 }
