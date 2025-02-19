@@ -5,6 +5,8 @@ pipeline {
         NEXUS_REPO = 'maven-releases'            // Replace with your Nexus Repository name
         NEXUS_CREDENTIALS_ID = 'nexus' // Jenkins credentials ID for Nexus
         ARTIFACT_NAME = 'javaApp.jar'            // Name of the artifact
+        MAVEN_HOME = tool 'mvn-3.9.9'  // Replace with the name of your Maven installation in Jenkins
+        PATH = "${MAVEN_HOME}/bin:${PATH}"
     }
     stages {
         stage('Checkout') {
