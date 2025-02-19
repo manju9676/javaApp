@@ -26,7 +26,11 @@ pipeline {
                     //     curl -v -u admin:Manju208 --upload-file target/${ARTIFACT_NAME} \
                     //     ${NEXUS_URL}/repository/${NEXUS_REPO}/${ARTIFACT_NAME}
                     // """
+                    sh 'ls'
+                    sh 'mvn clean'
+                    sh 'ls'
                     sh 'mvn clean package'
+                    sh 'ls'
                 }
             }
         }
