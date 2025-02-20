@@ -31,7 +31,7 @@ pipeline {
                     // sh 'ls'
                     // sh 'mvn clean package'
                     sh 'ls'
-                    sh 'mvn clean deploy'
+                    sh 'mvn deploy'
                 }
             }
         }
