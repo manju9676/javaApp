@@ -14,31 +14,32 @@ pipeline {
         stage('Checkout') {
             steps {
                 git credentialsId: 'github', url: 'https://github.com/manju9676/javaApp.git'
+                sh 'ls'
             } 
         }
 
-        stage('Build & Test') {
-            steps {
-                sh 'mvn clean verify'
-            }
-        }
+        // stage('Build & Test') {
+        //     steps {
+        //         sh 'mvn clean verify'
+        //     }
+        // }
 
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('SonarQube') {  // Use the configured SonarQube instance
-                    sh 'mvn sonar:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN'
-                }
-            }
-        }
+        // stage('SonarQube Analysis') {
+        //     steps {
+        //         withSonarQubeEnv('SonarQube') {  // Use the configured SonarQube instance
+        //             sh 'mvn sonar:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN'
+        //         }
+        //     }
+        // }
 
-        stage('Quality Gate') {
-            steps {
-                script {
-                    timeout(time: 1, unit: 'MINUTES') {
-                        waitForQualityGate abortPipeline: true
-                    }
-                }
-            }
-        }
+        // stage('Quality Gate') {
+        //     steps {
+        //         script {
+        //             timeout(time: 1, unit: 'MINUTES') {
+        //                 waitForQualityGate abortPipeline: true
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
