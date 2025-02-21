@@ -3,6 +3,8 @@ pipeline {
 
     environment {
         SONARQUBE_SERVER = "Sonar"  // Name configured in Jenkins
+        MAVEN_HOME = tool 'mvn-3.9.9'  // Replace with the name of your Maven installation in Jenkins
+        PATH = "${MAVEN_HOME}/bin:${PATH}"
     }
 
     stages {
@@ -25,7 +27,7 @@ pipeline {
                         mvn sonar:sonar \
                             -Dsonar.projectKey=demo \
                             -Dsonar.host.url=http://http://18.222.219.116:9000 \
-                            -Dsonar.login=credintials('sonar-key')
+                            -Dsonar.login=sqa_2b7dcf6d4e977062e8e22edc223b5ba6d5ea8946
                     '''
                 }
             }
