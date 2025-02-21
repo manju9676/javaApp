@@ -5,6 +5,7 @@ pipeline {
         SONAR_HOST_URL = 'http://18.222.219.116:9000'
         SONAR_PROJECT_KEY = 'demo'
         SONAR_TOKEN = credentials('Sonar2')  // Fetch from Jenkins credentials
+        SONAR_SCANNER = 'Sonar'
         MAVEN_HOME = tool 'mvn-3.9.9'  // Replace with the name of your Maven installation in Jenkins
         PATH = "${MAVEN_HOME}/bin:${PATH}"
     }
