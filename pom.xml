@@ -47,28 +47,17 @@
         </plugins>
     </build>
 
-    <distributionManagement>
-        <!-- <repository>
-            <id>nexus-releases</id>
-            <url>http://3.128.184.235:8081/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <url>http://3.128.184.235:8081/repository/maven-snapshots/</url>
-        </snapshotRepository> -->
-
-          <repository>
+   <distributionManagement>
+    <repository>
         <id>test-artifact</id>
-        <url>https://pkgs.dev.azure.com/<organization>/<project>/_packaging/test-artifact/maven/v1</url>
+        <url>https://pkgs.dev.azure.com/devopswithazurepractice/artifcttest/_packaging/test-artifact/maven/v1</url>
     </repository>
 
     <snapshotRepository>
         <id>test-artifact</id>
-        <url>https://pkgs.dev.azure.com/<organization>/<project>/_packaging/test-artifact/maven/v1</url>
+        <url>https://pkgs.dev.azure.com/devopswithazurepractice/artifcttest/_packaging/test-artifact/maven/v1</url>
     </snapshotRepository>
-    </distributionManagement>
-    
-    
+</distributionManagement>
 
 
 </project>
