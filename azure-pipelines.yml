@@ -31,9 +31,12 @@ steps:
     sonarQubeRunAnalysis: false
 
 - task: MavenAuthenticate@0
-  displayName: 'Authenticate to Azure Artifacts feed'
+  displayName: Authenticate to Azure Artifacts
   inputs:
-    artifactsFeeds: 'test-artifact'        ## Select one or multiple feeds to authenticate with.
-- script: |
-   mvn deploy
-  displayName: 'Publish'
+    artifactsFeeds: 'test-artifact'
+
+- task: Maven@4
+  displayName: Build and Publish
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'clean deploy'
